@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Collapsible Categories</title>
+    <style>
+    /* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    height: 100%;
+    position: fixed; /* Fix the sidebar position */
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+/* Sidebar Buttons */
+.sidebar button {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    outline: none;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar button.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Nested Content */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 20px; /* Indentation for nested categories */
+    box-sizing: border-box;
+}
+
+.collapsible-content.expanded {
+    max-height: 1000px; /* Arbitrary large value to allow expansion */
+    transition: max-height 0.5s ease-in-out;
+}
+
+/* Main Content Area */
+.content-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-left: 290px; /* Increased margin to create a bigger gap */
+    margin-right: 20px; /* Small gap on the right side */
+    margin-top: 10px; /* Add some space at the top */
+    margin-bottom: 10px; /* Optional: Add space at the bottom */
+    border: 1px solid black; /* Border for content area */
+    max-width: calc(100% - 310px); /* Adjusted max-width */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.content-area h2 {
+    margin-top: 0;
+}
+  </style>
+  
+  
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="collapsible">Main</button>
+        <div class="collapsible-content">
+            <button class="collapsible">Nill</button>
+            <div class="collapsible-content">
+                <button class="collapsible" data-content="Still testing RAH">Test 1</button>
+                <div class="collapsible-content">
+                    <!-- Additional content can be added here -->
+                </div>
+            </div>
+            <button class="collapsible">Zepterium</button>
+            <div class="collapsible-content">
+                <!-- Content specific to Zepterium can be added here -->
+            </div>
+        </div>
+
+        <button class="collapsible">Random</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Random can be added here -->
+        </div>
+
+        <button class="collapsible">Finance</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Finance can be added here -->
+        </div>
+
+        <button class="collapsible">Chemistry</button>
+        <div class="collapsible-content">
+            <button class="collapsible" data-content="Chemistry Drugs Content">Drugs (educational)</button>
+            <div class="collapsible-content">
+                <!-- Content specific to Drugs can be added here -->
+            </div>
+        </div>
+
+        <button class="collapsible">Computer Science</button>
+        <div class="collapsible-content">
+            <button class="collapsible" data-content="Linux Content">Linux</button>
+            <div class="collapsible-content">
+                <button class="collapsible" data-content="Networking Content">Networking</button>
+                <button class="collapsible" data-content="OPSEC & Security Content">OPSEC & Security</button>
+                <button class="collapsible" data-content="Tools Content">Tools</button>
+                <button class="collapsible" data-content="Hacking Content">Hacking</button>
+                <button class="collapsible" data-content="Coding Content">Coding</button>
+            </div>
+        </div>
+
+        <button class="collapsible">Math</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Math can be added here -->
+        </div>
+
+        <button class="collapsible">Tech</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Tech can be added here -->
+        </div>
+
+        <button class="collapsible">Psychology</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Psychology can be added here -->
+        </div>
+
+        <button class="collapsible">Philosophy</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Philosophy can be added here -->
+        </div>
+
+        <button class="collapsible">Weapons</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Weapons can be added here -->
+        </div>
+
+        <button class="collapsible">Survival</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Survival can be added here -->
+        </div>
+
+        <button class="collapsible">History</button>
+        <div class="collapsible-content">
+            <!-- Content specific to History can be added here -->
+        </div>
+
+        <button class="collapsible">Anime</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Anime can be added here -->
+        </div>
+
+        <button class="collapsible">Manga</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Manga can be added here -->
+        </div>
+
+        <button class="collapsible">Resources</button>
+        <div class="collapsible-content">
+            <!-- Content specific to Resources can be added here -->
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        <h2>Welcome to the Main Content Area</h2>
+        <p>Select a category from the sidebar to view the content.</p>
+    </div>
+
+    <script>
+        // Get all collapsible buttons
+        var coll = document.getElementsByClassName("collapsible");
+
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                // Toggle active class
+                this.classList.toggle("active");
+
+                // Get the next sibling collapsible-content div
+                var content = this.nextElementSibling;
+
+                if (content.classList.contains('expanded')) {
+                    content.classList.remove('expanded');
+                } else {
+                    // Collapse all other collapsible-content divs at the same level
+                    var siblingContents = this.parentElement.children;
+                    for (var j = 0; j < siblingContents.length; j++) {
+                        if (siblingContents[j].classList.contains('collapsible-content')) {
+                            siblingContents[j].classList.remove('expanded');
+                        }
+                    }
+
+                    // Expand the selected collapsible-content
+                    content.classList.add('expanded');
+                }
+
+                // Display content for the selected button in the main content area
+                if (this.dataset.content) {
+                    var mainContent = document.querySelector('.content-area');
+                    mainContent.innerHTML = "<h2>" + this.textContent + "</h2><p>" + this.dataset.content + "</p>";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
